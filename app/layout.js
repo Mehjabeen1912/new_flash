@@ -1,7 +1,7 @@
 import { ClerkProvider } from '@clerk/nextjs';
 import { Inter } from "next/font/google";
-import { Analytics } from '@vercel/analytics'; // Importing the Analytics component
 import "./globals.css";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,13 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
       <html lang="en">
-        <head>
-          {/* Optional: Add other head elements here */}
-        </head>
-        <body className={inter.className}>
-          <Analytics /> {/* This component tracks page views */}
-          {children}
-        </body>
+        <body className={inter.className}>{children}</body>
       </html>
     </ClerkProvider>
   );
